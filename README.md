@@ -1,6 +1,6 @@
 **Nilkantha Namdev Gholap - Personal Website**
 Overview
-This is the personal website of Nilkantha Namdev Gholap, a science popularizer and amateur astronomer. The website showcases my background, work experience, projects, and contributions to science communication.
+This is Nilkantha Namdev Gholap's website, a science popularizer and amateur astronomer. The website showcases my background, work experience, projects, and contributions to science communication.
 
 Website
 The website is hosted on GitHub Pages and can be accessed here: Nilkantha's Website
@@ -11,7 +11,7 @@ The website is hosted on GitHub Pages and can be accessed here: Nilkantha's Webs
   Experience: Details of my professional experience with links to organizations I've worked with.
   Projects: An overview of the projects I’ve worked on, including astrophysics research and technical contributions.
   Science Popularization: My efforts and involvement in popularizing science, including volunteer work and events.
-  Contact: How to reach me via email, phone, and LinkedIn.
+  Contact: How can you reach me via email, phone, and LinkedIn?
 **Technologies Used**
 HTML: The structure of the website.
 CSS: Styling to make the website visually appealing.
@@ -28,12 +28,14 @@ To view the website locally on your machine:
 open index.html
 
 **Contributing**
-If you have suggestions or improvements, feel free to fork the repository, create a new branch, and submit a pull request. Contributions are always welcome!
+Feel free to fork the repository, create a new branch, and submit a pull request if you have suggestions or improvements. Contributions are always welcome!
 
 **License**
 you can use this template. 
+
 **Contact**
 For any questions or inquiries, feel free to reach out:
 
 Email: nilkanthagholap1@gmail.com
+
 LinkedIn: [Nilkantha Gholap](http://www.linkedin.com/in/nilkantha-gholap)
