@@ -120,3 +120,37 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+/* Dropdown button */
+.dropdown-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Style for dropdown content */
+.dropdown-content {
+    display: none;
+    padding: 10px 15px;
+    background-color: #f1f1f1;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+/* Show the dropdown content when the button is clicked */
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* Add hover effect to the dropdown button */
+.dropdown-btn:hover {
+    background-color: #0056b3;
+}
