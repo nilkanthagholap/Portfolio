@@ -5,12 +5,19 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    background-image: url('https://github.com/nilkanthagholap/Portfolio/blob/main/cycle.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.9); /* Adds a semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 header {
