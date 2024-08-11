@@ -27,3 +27,22 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+/* YT video*/
+.video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio (height:width) */
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+.video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
