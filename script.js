@@ -32,6 +32,6 @@ function myFunction() {
 const currentYear = new Date().getFullYear();
 
 // Set the current year in the footer
-document.getElementById('current-year').textContent = currentYear;</script>
+document.getElementById('current-year').textContent = currentYear;
 
 
