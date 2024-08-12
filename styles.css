@@ -90,14 +90,15 @@ h3 {
      /* max-width: 200px; Adjust the size of the image */
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Centers the image horizontally if it's smaller than the container */
+    /*display: block;*/
+    /*margin: 0 auto;  Centers the image horizontally if it's smaller than the container */
     border-radius: 10px;
 }
 
 /* Centering image vertically */
 .about-image {
-    display: flex;
+    flex: 1;
+    /*display: flex;*/
     align-items: center;
     justify-content: center;
 }
