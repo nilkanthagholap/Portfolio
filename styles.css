@@ -85,25 +85,23 @@ h3 {
     flex: 1;
     padding: 20px;
 }
-
+/*
 .about-image img {
-     /* max-width: 200px; Adjust the size of the image */
     max-width: 100%;
     height: auto;
-    /*display: block;*/
-    /*margin: 0 auto;  Centers the image horizontally if it's smaller than the container */
+    display: block;
+    margin: 0 auto;  
     border-radius: 10px;
 }
 
-/* Centering image vertically */
 .about-image {
     flex: 1;
-    /*display: flex;*/
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/*
+*/
 .about-image {
     flex: 1;
     text-align: center;
@@ -114,7 +112,7 @@ h3 {
     height: auto;
     border-radius: 10px;
 }
-*/
+
 
 .experience-item {
     margin-bottom: 20px;
