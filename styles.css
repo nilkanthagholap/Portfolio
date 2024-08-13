@@ -10,6 +10,10 @@ body {
             color: #333;
             text-align: justify;
         }
+/*white space between paragraph*/
+p.b {
+  white-space: normal;
+}
 
 .container {
     width: 80%;
