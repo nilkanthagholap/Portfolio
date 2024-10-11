@@ -77,8 +77,12 @@ h3 {
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
-}
+    pointer-events: none;
 
+}
+img {
+  pointer-events: none;
+}
 .about-content {
     display: flex;
     flex-wrap: wrap;
@@ -109,12 +113,15 @@ h3 {
 .about-image {
     flex: 1;
     text-align: center;
+    pointer-events: none;
+
 }
 
 .about-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    pointer-events: none;
 }
 
 
