@@ -1,7 +1,7 @@
 Here I will keep track of photos uploaded to the folders on nilkanthagholap4
 
 I have to add new photos to the respective albums now and then.
-then I go to this link https://www.publicalbum.org/blog/embedding-google-photos-albums i generate the link with all new and old pictures and paste it in the respective section
+then I go to this link https://www.reabr.com i generate the link with all new and old pictures and paste it in the respective section
 to create the code I can use the following links
 
 
