@@ -55,4 +55,9 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-
+<script>
+    // Disable right-click on the entire page
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();  // Prevents the context menu from appearing
+    });
+</script>
