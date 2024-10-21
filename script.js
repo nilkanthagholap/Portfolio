@@ -55,9 +55,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-// Disable right-click on the entire page
-document.addEventListener('contextmenu', function(event) {
-   event.preventDefault();
-   alert("Right-click is disabled on this page.");  // Optional: Display a message
-}
-
