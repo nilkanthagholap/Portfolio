@@ -56,9 +56,4 @@ function topFunction() {
 });
 
 
-// Disable right-click on the entire page
-    document.addEventListener('contextmenu', function(event) {
-        event.preventDefault();
-        alert("Right-click is disabled on this page.");  // Optional: Display a message
-    });
 
