@@ -23,10 +23,10 @@ function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
-  } else {
+  }); else {
     x.className = "topnav";
-  }
-}
+  });
+});
 
 // Get the current year
 const currentYear = new Date().getFullYear();
@@ -46,12 +46,12 @@ function scrollFunction() {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
-  }
-}
+  });
+});
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+});
 
