@@ -73,6 +73,18 @@
   data-title="flowers and plants"
     data-delay="2"
   data-description="338 new items added to shared album">
+
+	 <!-- stop inspection and right click on website -->
+    <script type="text/javascript">
+		document.onkeydown = function (event) {
+		     event = (event || window.event);
+		     if (event.keyCode == 123 || event.keyCode == 18)
+		     {
+		           return false;
+		     }
+		}
+		document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>
     
   <object data="https://lh3.googleusercontent.com/pw/AP1GczOWArAeRhehgPhXISN8euDhxNPQM-95aURa3Y2UvVk45wSUSHetMdfHgfkLe2lBJuDFg1g556si5ChFbx7acV6aNeDFdewp1C68GAjkHFd1QCtejK8=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczNYfjTYi51GGXPBgnoDBPMELkXLgNAJCkQsPpoj5zkPXI-GjaLVuBzNNILw5qW4_slcWMYQRGnvwq1LAfCV8XXu7-4FlyHPcgcP0JpFbrVBlJmXecg=w1920-h1080"></object>
