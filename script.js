@@ -4,9 +4,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
-        });
-    });
-});
+        }
+    }
+}
 
 document.querySelectorAll('.collapsible-header').forEach(header => {
   header.addEventListener('click', () => {
@@ -15,8 +15,8 @@ document.querySelectorAll('.collapsible-header').forEach(header => {
       header.parentElement.classList.toggle('active');
 
       collapsibleContent.style.display = collapsibleContent.style.display === 'block' ? 'none' : 'block';
-  });
-});
+  }
+}
 
 
 function myFunction() {
@@ -25,8 +25,8 @@ function myFunction() {
     x.className += " responsive";
   }); else {
     x.className = "topnav";
-  });
-});
+  }
+}
 
 // Get the current year
 const currentYear = new Date().getFullYear();
