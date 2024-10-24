@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <title>Nilkantha Namdev Gholap - Science Popularizer and Amateur Astronomer</title>
     <link rel="stylesheet" href="styles.css">
+<!-- stop inspection and right click on website -->
+    <script type="text/javascript">
+		document.onkeydown = function (event) {
+		     event = (event || window.event);
+		     if (event.keyCode == 123 || event.keyCode == 18)
+		     {
+		           return false;
+		     }
+		}
+		document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>
 </head>
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
