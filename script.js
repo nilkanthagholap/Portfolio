@@ -56,3 +56,14 @@ function topFunction() {
 }
 
 
+// Disable F12 (KeyCode 123) and ALT (KeyCode 18) keys
+document.onkeydown = function (event) {
+    event = event || window.event;
+    if (event.keyCode == 123 || event.keyCode == 18) {
+        return false;
+    }
+}
+
+// Disable right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
