@@ -25,8 +25,8 @@ function myFunction() {
     x.className += " responsive";
   }); else {
     x.className = "topnav";
-  }
-}
+  });
+});
 
 // Get the current year
 const currentYear = new Date().getFullYear();
