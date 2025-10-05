@@ -3,185 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>छायाचित्रे</title>
-    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
+    <title>NeIL's Cliks</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- stop inspection and right click on website -->
+    <script type="text/javascript">
+		document.onkeydown = function (event) {
+		     event = (event || window.event);
+		     if (event.keyCode == 123 || event.keyCode == 18)
+		     {
+		           return false;
+		     }
+		}
+		document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>
+    <meta name="description" content="Mobile photography collection: flowers, fungi, clouds, insects, and wildlife.">
+    <style>
+      .blog-posts { display: grid; gap: 2rem; padding: 1rem; }
+      .pa-gallery-player-widget { width: 100%; height: 60vh; max-height: 80vh; border-radius: 8px; overflow: hidden; }
+      nav ul { list-style: none; display: flex; justify-content: center; gap: 1rem; }
+      nav a { text-decoration: none; color: #333; padding: 0.5rem 1rem; border: 1px solid #ccc; border-radius: 4px; }
+      #myBtn { position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer; }
+      section[role="img"] { border: 1px solid #ddd; border-radius: 8px; margin: 1rem 0; }
+    </style>
 </head>
 <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <header>
-        <h1>Nilkantha's Photography Portfolio</h1>
-        <p>Amateur shots from Nokia Lumia 625 & Vivo Y73. View in landscape for best experience.</p>
-        <p><em>Note: Some close-ups may be unsettling (insects/dead animals).</em></p>
+        <div class="container">
+            <h1 style="text-align:center;">छायाचित्रे</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#plants" onclick="loadSection('1_Plants_and_Flowers')">Plants</a></li>
+                    <li><a href="#fungi" onclick="loadSection('2_Fungus')">Fungi</a></li>
+                    <li><a href="#clouds" onclick="loadSection('3_Clouds_and_Sky')">Clouds</a></li>
+                    <li><a href="#interesting" onclick="loadSection('4_Few_Interesting_Things')">Interesting</a></li>
+                    <li><a href="#insects" onclick="loadSection('5_Insects_Animals_Birds')">Insects</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <!-- Quick links to albums -->
-        <a href="#album-plants-flowers-1">Plants & Flowers 1</a> |
-        <a href="#album-plants-flowers-2">Plants & Flowers 2</a> |
-        <a href="#album-fungus">Fungus</a> |
-        <a href="#album-clouds-sky">Clouds & Sky</a> |
-        <a href="#album-interesting-things">Interesting Things</a> |
-        <a href="#album-insects-main">Insects, Animals, Birds</a> |
-        <a href="#album-insects-1">Insects, Animals, Birds 1</a>
-    </nav>
+    <section id="intro" class="blog-posts">
+        <div class="container">
+            <article class="post">
+                <h2></h2>
+                <p>Hi,</p>
 
-    <main>
-        <!-- Album: Plants and Flowers 1 -->
-        <section id="album-plants-flowers-1" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Plants and Flowers 1</h2>
-                    <p>Core collection of plant and flower photos.</p>
-                </article>
-                <div id="plants-flowers-1-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+                <p>These are some photos I took with my mobile camera. 
+                    Some older photos were taken with a Nokia Lumia 625, which has a 5MP camera; the newer ones are from a Vivo Y73 with a 64MP (16MP) camera. 
+                    You will be seeing the photos taken by the Lumia first. <be>
+                    Photos in landscape mode are viewed best in full-screen mode <be>
+                    I know what some of the objects in the images are, but to identify some insects, fungi, and plants, I rely on Google Lens.</p>
 
-        <!-- Album: Plants and Flowers 2 -->
-        <section id="album-plants-flowers-2" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Plants and Flowers 2</h2>
-                    <p>Additional plant and flower images.</p>
-                </article>
-                <div id="plants-flowers-2-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+                    <p>The default delay for the slideshow is 2 seconds. Feel free to stop the slideshow and manually scroll through the images.</p>
 
-        <!-- Album: Fungus -->
-        <section id="album-fungus" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Fungus</h2>
-                    <p>Close-ups of fungi spotted in nature.</p>
-                </article>
-                <div id="fungus-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+                    <p><strong>There are also a few images of insects and dead animals, so if you don’t like that, you know what to do.</strong></p>
 
-        <!-- Album: Clouds and Sky -->
-        <section id="album-clouds-sky" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Clouds and Sky</h2>
-                    <p>Captures of atmospheric wonders.</p>
-                </article>
-                <div id="clouds-sky-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+                    <br>
 
-        <!-- Album: Few Interesting Things -->
-        <section id="album-interesting-things" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Few Interesting Things</h2>
-                    <p>Miscellaneous intriguing observations.</p>
-                </article>
-                <div id="interesting-things-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+                    <p>If you have more information about any of the images shown, Or you want to use these in your work, I’d love to hear from you through the <a href="Contact.html">contact form</a>.</p>
+                    <p></p>
+            </article>
+        </div>                 
+    </section>
 
-        <!-- Album: Insects, Animals, Birds (Main) -->
-        <section id="album-insects-main" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Insects, Animals, Birds</h2>
-                    <p>Wildlife encounters, including birds and animals.</p>
-                </article>
-                <div id="insects-main-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
+    <!-- Album Placeholders -->
+    <section id="plants" class="blog-posts" role="img" aria-labelledby="plants-heading">
+        <div id="1_Plants_and_Flowers-placeholder">Loading Plants...</div>
+    </section>
 
-        <!-- Album: Insects, Animals, Birds 1 -->
-        <section id="album-insects-1" class="blog-posts">
-            <div class="container">
-                <article class="post">
-                    <h2>Insects, Animals, Birds 1</h2>
-                    <p>Continuation of wildlife photos.</p>
-                </article>
-                <div id="insects-1-container">
-                    <div id="loading">Loading album... (Automated slideshow starts in 2s)</div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section id="fungi" class="blog-posts" role="img" aria-labelledby="fungi-heading">
+        <div id="2_Fungus-placeholder">Loading Fungi...</div>
+    </section>
 
-   
-    <!-- Shared plugin script - loads once -->
-    <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+    <section id="clouds" class="blog-posts" role="img" aria-labelledby="clouds-heading">
+        <div id="3_Clouds_and_Sky-placeholder">Loading Clouds...</div>
+    </section>
+
+    <section id="interesting" class="blog-posts" role="img" aria-labelledby="interesting-heading">
+        <div id="4_Few_Interesting_Things-placeholder">Loading Interesting...</div>
+    </section>
+
+    <section id="insects" class="blog-posts" role="img" aria-labelledby="insects-heading">
+        <div id="5_Insects_Animals_Birds-placeholder">Loading Insects...</div>
+    </section>
+
+    <footer> 
+        <div class="container">
+            <h1>|धन्योस्मी|</h1>
+            <p></p>
+            <p style="color:white; text-align:center;">&copy; <span id="current-year"></span> Nilkantha Namdev Gholap. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
     <script>
-        // Enhanced load function with error handling and timeout
-        async function loadAlbum(containerId, albumFile) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
+        // Update year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Back to top
+        function topFunction() { 
+            window.scrollTo({top: 0, behavior: 'smooth'}); 
+        }
+
+        // Load section content dynamically
+        async function loadSection(sectionName) {
+            const placeholder = document.getElementById(sectionName + '-placeholder');
             try {
-                const response = await fetch(albumFile);
-                if (!response.ok) throw new Error(`Failed to load ${albumFile} (status: ${response.status})`);
-                let html = await response.text();
-                container.innerHTML = html;
-
-                // Re-init widget with timeout to ensure script loads
-                setTimeout(() => reinitPublicAlbum(container.querySelector('.pa-gallery-player-widget')), 500);
+                const response = await fetch(sectionName + '.html');
+                if (!response.ok) throw new Error('Failed to load');
+                const html = await response.text();
+                placeholder.innerHTML = html;
+                const widget = placeholder.querySelector('.pa-gallery-player-widget');
+                if (widget) widget.style.display = 'block';
+                document.getElementById(sectionName).scrollIntoView({behavior: 'smooth'});
             } catch (error) {
-                container.innerHTML = `<p style="color: red; text-align: center;">Error loading album: ${error.message}. <button onclick="location.reload()">Retry</button></p>`;
-                console.error('Load error for ' + albumFile + ':', error);
+                placeholder.innerHTML = `<p>Error loading ${sectionName}. <a href="${sectionName}.html" target="_blank">Open in new tab</a></p>`;
             }
         }
 
-        // Enhanced re-init: Force display and custom event
-        function reinitPublicAlbum(widgetEl) {
-            if (!widgetEl) return;
-            widgetEl.style.display = 'block'; // Override initial 'none'
-            const event = new CustomEvent('pa-widget-loaded', { detail: { element: widgetEl }, bubbles: true });
-            widgetEl.dispatchEvent(event);
-            // Additional hack: If plugin uses MutationObserver, trigger one
-            const mutationEvent = new MutationObserver(() => {});
-            mutationEvent.observe(widgetEl, { childList: true, subtree: true });
-            mutationEvent.disconnect();
-        }
-
-        // Lazy loading enhancement: Load albums only when scrolled into view
-        function initLazyLoading() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const containerId = entry.target.id;
-                        const albumMapping = {
-                            'plants-flowers-1-container': '1_Plants_and_Flowers_1.html',
-                            'plants-flowers-2-container': '1_Plants_and_Flowers_2.html',
-                            'fungus-container': '2_Fungus.html',
-                            'clouds-sky-container': '3_Clouds_and_Sky.html',
-                            'interesting-things-container': '4_Few_Interesting_Things.html',
-                            'insects-main-container': '5_Insects_Animals_Birds.html',
-                            'insects-1-container': '5_Insects_Animals_Birds_1.html'
-                        };
-                        const albumFile = albumMapping[containerId];
-                        if (albumFile) {
-                            loadAlbum(containerId, albumFile);
-                            observer.unobserve(entry.target);
-                        }
-                    }
-                });
-            }, { threshold: 0.1 }); // Trigger when 10% visible
-
-            // Observe all containers
-            document.querySelectorAll('[id$="-container"]').forEach(el => observer.observe(el));
-        }
-
-        // Initialize lazy loading on page load
-        window.addEventListener('load', initLazyLoading);
+        // Auto-load all sections on page load
+        window.addEventListener('load', () => {
+            loadSection('1_Plants_and_Flowers');
+            loadSection('2_Fungus');
+            loadSection('3_Clouds_and_Sky');
+            loadSection('4_Few_Interesting_Things');
+            loadSection('5_Insects_Animals_Birds');
+        });
     </script>
 </body>
 </html>
