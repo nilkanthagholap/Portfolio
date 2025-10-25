@@ -33,23 +33,49 @@
             flex-direction: column;
             gap: 40px;
         }
-        article {
+        .blog-post {
             background: white;
-            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border-left: 4px solid #007bff;
+            overflow: hidden;
         }
-        article h2 {
-            color: #007bff;
-            margin-top: 0;
+        .post-header {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            margin: 0;
+            cursor: pointer;
             border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .post-header h2 {
+            color: #007bff;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .post-header .toggle-icon {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .post-header:hover {
+            background: #e9ecef;
         }
         .post-meta {
             font-size: 0.9em;
             color: #666;
-            margin-bottom: 15px;
+            margin: 0;
+        }
+        .post-content {
+            padding: 0 25px 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .post-content.open {
+            max-height: 2000px; /* Adjust as needed for content length */
+            padding: 25px;
         }
         img {
             max-width: 100%;
@@ -77,8 +103,12 @@
             body {
                 padding: 10px;
             }
-            article {
-                padding: 15px;
+            .post-header, .post-content.open {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .post-content.open {
+                padding-bottom: 15px;
             }
         }
     </style>
@@ -90,247 +120,354 @@
     </header>
 
     <main>
-        <article>
-            <h2>I am waiting for Inspiration</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>will update when inspiration strikes</p>
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>I am waiting for Inspiration</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>will update when inspiration strikes</p>
+            </div>
         </article>
 
-        <article>
-            <h2>The Expanding Universe — Our Endless Journey</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <img src="https://via.placeholder.com/600x300?text=Redshift+Illustration" alt="Redshift illustration showing stretched light waves.">
-            <p>With galaxy distances known, Edwin Hubble made a shocking discovery in the 1920s.</p>
-            
-            <h3>Hubble’s Law</h3>
-            <p>Hubble measured galaxies’ distances using Cepheids and checked their light color. He found that their light shifted toward red — meaning they were moving away. The farther a galaxy, the faster it moved. That meant the universe is expanding!</p>
-            <img src="https://via.placeholder.com/600x300?text=Balloon+Universe" alt="Balloon with dots moving apart as it inflates.">
-            
-            <h3>Modern Mapping</h3>
-            <p>Today, projects like the Sloan Digital Sky Survey map billions of galaxies. They form huge cosmic webs — like a 3D spider web made of galaxies.</p>
-            
-            <h3>The Mystery Lives On</h3>
-            <p>Even today, astronomers find a small mismatch (the Hubble Tension) in the universe’s expansion rate. New ideas, like gravitational-wave standard sirens, may help fix it. Maybe one of you will find the answer someday!</p>
-            
-            <div class="activity">
-                <h3>Activity: The Balloon Universe</h3>
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>The Expanding Universe — Our Endless Journey</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <img src="https://via.placeholder.com/600x300?text=Redshift+Illustration" alt="Redshift illustration showing stretched light waves.">
+                <p>With galaxy distances known, Edwin Hubble made a shocking discovery in the 1920s.</p>
+                
+                <h3>Hubble’s Law</h3>
+                <p>Hubble measured galaxies’ distances using Cepheids and checked their light color. He found that their light shifted toward red — meaning they were moving away. The farther a galaxy, the faster it moved. That meant the universe is expanding!</p>
+                <img src="https://via.placeholder.com/600x300?text=Balloon+Universe" alt="Balloon with dots moving apart as it inflates.">
+                
+                <h3>Modern Mapping</h3>
+                <p>Today, projects like the Sloan Digital Sky Survey map billions of galaxies. They form huge cosmic webs — like a 3D spider web made of galaxies.</p>
+                
+                <h3>The Mystery Lives On</h3>
+                <p>Even today, astronomers find a small mismatch (the Hubble Tension) in the universe’s expansion rate. New ideas, like gravitational-wave standard sirens, may help fix it. Maybe one of you will find the answer someday!</p>
+                
+                <div class="activity">
+                    <h3>Activity: The Balloon Universe</h3>
+                    <ol>
+                        <li>Draw dots on a balloon.</li>
+                        <li>Blow air slowly.</li>
+                        <li>Watch how dots move apart.</li>
+                        <li>Measure how distance grows faster between farther dots.</li>
+                    </ol>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Cosmic Candles — Measuring the Galaxies</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <img src="https://via.placeholder.com/600x300?text=HR+Diagram" alt="HR diagram showing color vs. brightness.">
+                <p>Once parallax reached its limit, scientists used light itself to measure farther.</p>
+                
+                <h3>The Brightness Trick</h3>
+                <p>Light grows dimmer with distance. If you know how bright something truly is, you can find how far it is by how faint it looks.</p>
+                
+                <h3>The Cepheid Secret</h3>
+                <p>In the early 1900s, Henrietta Swan Leavitt discovered special stars called Cepheid variables that pulse in brightness. The longer the pulse, the brighter the star truly is. These became “standard candles” — cosmic lightbulbs of known strength!</p>
+                <img src="https://via.placeholder.com/600x300?text=Cepheid+Light+Curve" alt="Light curve of a Cepheid variable star showing brightness vs. time.">
+                <p>By comparing true brightness with observed brightness, astronomers measured the distances to other galaxies. This expanded our cosmic map to millions of light-years!</p>
+                
+                <div class="activity">
+                    <h3>Activity: Light Layers</h3>
+                    <ol>
+                        <li>Turn on a bulb.</li>
+                        <li>Cover it with one, two, three tissue paper sheets.</li>
+                        <li>Notice how light fades each time.</li>
+                    </ol>
+                    <p>That’s how distance dims light — the same principle that built the galactic scale.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Beyond the Sun — Measuring Stars</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>Once the AU was known, astronomers could reach for the stars — literally!</p>
+                <img src="https://via.placeholder.com/600x300?text=Earth+Orbit+Parallax" alt="Earth’s orbit showing two viewing positions six months apart.">
+                
+                <h3>The Parallax Method</h3>
+                <p>If you close one eye, then the other, your thumb seems to move against the background. That’s parallax — and astronomers used Earth’s orbit as their “two eyes.” They measured a star’s position, waited six months, then measured again. The tiny shift showed the star’s distance.</p>
+                
+                <h3>The First Success</h3>
+                <p>In 1838, Friedrich Bessel measured the first stellar parallax. The nearest star, Proxima Centauri, shifts only 1.5 arc-seconds — like seeing a coin move 2.5 km away!</p>
+                
+                <div class="activity">
+                    <h3>Activity: Thumb Trick</h3>
+                    <ol>
+                        <li>Stretch your arm and raise your thumb.</li>
+                        <li>Look at it with one eye, then switch eyes.</li>
+                        <li>Notice how it “moves.”</li>
+                        <li>Bring your thumb closer — the shift gets bigger!</li>
+                    </ol>
+                    <p>That’s the same principle astronomers use to measure stars.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Locking the Scale — The Astronomical Unit</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>Kepler knew the shapes of the orbits but not their true sizes. Astronomers needed one real distance to scale the whole solar system — the distance from Earth to the Sun, called 1 Astronomical Unit (AU).</p>
+                <img src="https://via.placeholder.com/600x300?text=Transit+of+Venus" alt="Venus passing across the Sun as seen from two Earth positions.">
+                
+                <h3>The Transit of Venus</h3>
+                <p>When Venus passes between the Sun and Earth, it looks like a tiny black dot crossing the Sun’s face. In the 1700s, scientists across the world — even in India — timed how long it took Venus to cross. Because observers stood at different points on Earth, their timings differed slightly. Using geometry, they found the true Earth–Sun distance.</p>
+                
+                <h3>Measuring the Speed of Light</h3>
+                <p>Later, Ole Rømer used this new distance to measure how fast light travels. By timing Jupiter’s moon Io, he saw its eclipses arrived 20 minutes late when Earth was farthest away. That meant light took 20 minutes to cross twice the AU distance — the first measurement of light’s speed!</p>
+                
+                <div class="activity">
+                    <h3>Activity: Torch and Coin Timing</h3>
+                    <p>You’ll need:</p>
+                    <ul>
+                        <li>A coin</li>
+                        <li>A torch</li>
+                        <li>A stopwatch</li>
+                    </ul>
+                    <p>Steps:</p>
+                    <ol>
+                        <li>Place the torch facing a wall.</li>
+                        <li>Move the coin across the light beam at steady speed.</li>
+                        <li>Time how long it takes to cross.</li>
+                        <li>Move it closer or farther and repeat.</li>
+                    </ol>
+                    <p>Even tiny timing differences can tell big distances!</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Kepler’s Genius — Mapping the Solar System</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <img src="https://via.placeholder.com/600x300?text=Planetary+Orbits" alt="Planetary orbits showing Earth and Mars with elliptical paths.">
+                <p>More than 1,500 years later, a man named Johannes Kepler picked up where Copernicus left off. He wanted to know the exact shape of the planets’ paths around the Sun.</p>
+                
+                <h3>The Mars Trick</h3>
+                <p>Kepler used careful data collected by Tycho Brahe. He compared Mars’s position on nights 687 days apart — one full Mars year. That way, Mars was in the same place each time, but Earth had moved. Using geometry, he found Earth’s position on each of those nights and mapped its orbit.</p>
+                
+                <h3>The Big Discovery</h3>
+                <p>After ten years of painful math, Kepler found that planets don’t move in perfect circles — they move in ellipses (oval paths). The Sun sits at one focus of the ellipse. This discovery, known as Kepler’s First Law, was a giant leap. Now scientists could draw the shape of the solar system — though the scale (real size) was still unknown.</p>
+                
+                <div class="activity">
+                    <h3>Activity: Draw Elliptical Orbits</h3>
+                    <p>You’ll need:</p>
+                    <ul>
+                        <li>Paper, pencil, string, and two pins</li>
+                    </ul>
+                    <p>Steps:</p>
+                    <ol>
+                        <li>Push two pins close together — these are the “foci.”</li>
+                        <li>Tie the string into a loop and loop it around both pins.</li>
+                        <li>Pull the pencil tight and draw around — you’ll make an ellipse.</li>
+                        <li>Place the Sun at one focus and label planet orbits.</li>
+                    </ol>
+                    <img src="https://via.placeholder.com/600x300?text=Draw+Ellipse" alt="How to draw an ellipse using pins and string.">
+                    <p>That’s how Kepler discovered the true dance of the planets!</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Earth, Moon, and the Sun’s Great Secret</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>Once Earth’s size was known, another Greek scientist, Aristarchus of Samos, looked up and asked, “If I know how big Earth is, can I find how far the Moon and Sun are?”</p>
+                <img src="https://via.placeholder.com/600x300?text=Lunar+Eclipse+Shadow" alt="Earth’s shadow falling on the Moon during a lunar eclipse.">
+                
+                <h3>Measuring the Moon’s Distance</h3>
+                <p>Aristarchus studied lunar eclipses — when Earth blocks sunlight and its round shadow falls on the Moon. He noticed that Earth’s shadow looked about 2.5 times wider than the Moon itself. He also timed how long the Moon took to pass through the shadow — about 3 hours. Since the Moon takes 27 days to complete one orbit, he used geometry and ratios to compare how far it moved during those 3 hours versus its whole orbit. Using the known size of Earth, he worked out that the Moon must be about 60 Earth radii away. Modern value: 60.3 Earth radii. Amazing accuracy without telescopes!</p>
+                <img src="https://via.placeholder.com/600x300?text=Eclipse+Geometry" alt="Geometry showing Earth, Moon, and shadow width during eclipse.">
+                
+                <h3>Finding the Sun’s Distance</h3>
+                <p>Next, Aristarchus turned to the half-moon phase. When the Moon looks exactly half lit, the Sun, Earth, and Moon make a right triangle. If he could measure the angle between the Sun and Moon, he could find how far away the Sun was.</p>
+                <img src="https://via.placeholder.com/600x300?text=Half-Moon+Triangle" alt="Right triangle formed by Earth, Moon, and Sun during half-moon phase.">
+                <p>The trouble was that the angle was very small — less than 1°. His eyes weren’t precise enough. He thought the Sun was 20 times farther than the Moon. In truth, it’s about 370 times! Still, Aristarchus made a bold leap: since the Sun was so large, it must be the center and Earth must move around it. That was the first heliocentric model — nearly 1,800 years before Copernicus!</p>
+                
+                <div class="activity">
+                    <h3>Activity: Shadow and Coin Experiment</h3>
+                    <p>You’ll need:</p>
+                    <ul>
+                        <li>A coin</li>
+                        <li>A torch or candle</li>
+                        <li>A wall or screen</li>
+                        <li>A ruler</li>
+                    </ul>
+                    <p>Steps:</p>
+                    <ol>
+                        <li>Place the torch on a table, pointing at the wall.</li>
+                        <li>Hold the coin in front of it to make a circular shadow.</li>
+                        <li>Move the coin closer or farther and note how the shadow changes size.</li>
+                        <li>Use a ruler to measure distances and shadow diameters.</li>
+                    </ol>
+                    <p>You’ve just learned how light and shadow reveal distance — the same idea Aristarchus used to measure the heavens!</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>How Far Is Far? The Incredible Story of Measuring the Earth</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>Imagine standing outside on a sunny afternoon. You look at your shadow. Now imagine someone else, far away, doing the same thing — and their shadow is a little different! Would you believe that this tiny difference helped a man 2,000 years ago measure the entire size of the Earth?</p>
+                <p>Let’s travel back to ancient Egypt, around 250 BC. A wise man named Eratosthenes worked in the great library of Alexandria.</p>
+                <img src="https://via.placeholder.com/600x300?text=Eratosthenes+Experiment" alt="Eratosthenes experiment: Sunlight hitting Earth at Alexandria and Syene with shadows at different angles.">
+                
+                <h3>The Clue from a Deep Well</h3>
+                <p>Eratosthenes had heard that in Syene (now Aswan), on the day of the summer solstice, the Sun stood straight overhead. Sunlight fell straight into a deep well — no shadow at all! But in Alexandria, far to the north, a stick still made a small shadow at the same time. He thought, “If sunlight falls at different angles, the Earth must be curved!”</p>
+                
+                <h3>Measuring with Shadows</h3>
+                <p>At noon on the solstice, he placed a stick (a gnomon) upright in the ground and measured the shadow. The Sun’s rays were tilted by about 7.2°, which is 1/50th of a full circle (360°). The distance between Alexandria and Syene was about 800 km. So, if 7.2° equals 800 km, the whole circle (360°) must be: 360 × 800 ÷ 7.2 = 40,000 km. That’s almost the real circumference of Earth — measured 2,000 years ago with only a stick and sunlight!</p>
+                <img src="https://via.placeholder.com/600x300?text=Gnomon+Shadow" alt="Measuring the shadow angle with a stick (gnomon) and the Sun.">
+                
+                <h3>A Real Indian Example: Chennai and Jaipur</h3>
+                <p>Let’s try the same idea with two Indian cities! Chennai’s latitude ≈ 13° N, Jaipur’s latitude ≈ 27° N. Latitude difference = 14°. Distance between them ≈ 1,600 km (straight-line flight distance is about 1,607 km). If 14° = 1,600 km, then the full 360° = 360 × 1,600 ÷ 14 = 41,140 km. That’s very close to the real 40,075 km! Earth’s diameter = 41,140 ÷ π ≈ 13,090 km (Real = 12,742 km). Pretty good for simple math and sunlight! (Using the more precise 1,607 km distance: circumference ≈ 41,323 km, diameter ≈ 13,153 km — still impressively accurate!)</p>
+                <img src="https://via.placeholder.com/600x300?text=India+Map+Chennai+Jaipur" alt="Map of India highlighting Chennai and Jaipur for Earth measurement.">
+                
+                <div class="activity">
+                    <h3>Activity: Measure Earth’s Diameter</h3>
+                    <p>You’ll need:</p>
+                    <ul>
+                        <li>A straight stick (1 m)</li>
+                        <li>A ruler and protractor</li>
+                        <li>A watch or phone clock</li>
+                        <li>A friend in another city</li>
+                        <li>Google Maps to measure distance</li>
+                    </ul>
+                    <p>Steps:</p>
+                    <ol>
+                        <li>On the same date and time (solar noon), fix your stick upright on flat ground.</li>
+                        <li>Measure the length of its shadow.</li>
+                        <li>Calculate the Sun’s angle: angle = arctan(shadow ÷ stick height).</li>
+                        <li>Ask your friend to do the same.</li>
+                        <li>Find the difference in the Sun’s angle between both places.</li>
+                        <li>Use this formula: Earth’s circumference = 360 × distance ÷ angle difference.</li>
+                        <li>Divide by π to get diameter.</li>
+                    </ol>
+                    <img src="https://via.placeholder.com/600x300?text=Sunlight+Geometry" alt="Geometry of sunlight, stick, and shadow showing angle measurement.">
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>Plastic Mulch, a bad choice?</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="post-content">
+                <p>I was looking at old Google Earth images of my village and found one from 2018. The white areas in the fields are plastic mulch, which we farmers use to increase crop yields. But another picture shows our problem with getting rid of this plastic. The mulch is a 25-micron plastic film, and each acre needs 5-6 bundles, each weighing about 10 kg. If you search for my village, Rohokadi, and the surrounding area in the historical data, you’ll see the issue farmers might face soon. While plastic mulch has helped us grow better crops for the past 8-10 years, we are starting to notice some problems. Even though the mulch can be used for three crops in a row, most farmers only use it once and then throw it away. Over time, this plastic stops air from getting into the soil, which can harm the microbes that keep the soil healthy. This might make the soil less productive and lead to using more fertilizers.</p>
+                <p>Since mulch helps reduce water usage and weeds, it’s important for us to keep using it, especially in a developing country like ours. However, I’m concerned about the plastic waste it creates, so I’m looking for solutions. I’ve thought of a few ideas, and I’d love to collaborate if you have any thoughts on how they could be implemented:</p>
                 <ol>
-                    <li>Draw dots on a balloon.</li>
-                    <li>Blow air slowly.</li>
-                    <li>Watch how dots move apart.</li>
-                    <li>Measure how distance grows faster between farther dots.</li>
+                    <li><strong>Natural Foliage Mulch:</strong> Although using natural foliage as mulch is effective, collecting and spreading it can be difficult. I’m thinking about collecting this material and turning it into sheets that can be easily laid in the field.</li>
+                    <li><strong>Biodegradable Paper Mulch:</strong> Another idea is to coat craft paper with vegetable oil and cure it to make it into a water-resistant, degradable polymer. This paper could then be used as mulch.</li>
                 </ol>
             </div>
         </article>
 
-        <article>
-            <h2>Cosmic Candles — Measuring the Galaxies</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <img src="https://via.placeholder.com/600x300?text=HR+Diagram" alt="HR diagram showing color vs. brightness.">
-            <p>Once parallax reached its limit, scientists used light itself to measure farther.</p>
-            
-            <h3>The Brightness Trick</h3>
-            <p>Light grows dimmer with distance. If you know how bright something truly is, you can find how far it is by how faint it looks.</p>
-            
-            <h3>The Cepheid Secret</h3>
-            <p>In the early 1900s, Henrietta Swan Leavitt discovered special stars called Cepheid variables that pulse in brightness. The longer the pulse, the brighter the star truly is. These became “standard candles” — cosmic lightbulbs of known strength!</p>
-            <img src="https://via.placeholder.com/600x300?text=Cepheid+Light+Curve" alt="Light curve of a Cepheid variable star showing brightness vs. time.">
-            <p>By comparing true brightness with observed brightness, astronomers measured the distances to other galaxies. This expanded our cosmic map to millions of light-years!</p>
-            
-            <div class="activity">
-                <h3>Activity: Light Layers</h3>
-                <ol>
-                    <li>Turn on a bulb.</li>
-                    <li>Cover it with one, two, three tissue paper sheets.</li>
-                    <li>Notice how light fades each time.</li>
-                </ol>
-                <p>That’s how distance dims light — the same principle that built the galactic scale.</p>
+        <article class="blog-post">
+            <div class="post-header">
+                <div>
+                    <h2>A Thought-Provoking Start: Exploring "What is a Computer?" with Young Minds</h2>
+                    <p class="post-meta">Posted on October 25, 2025</p>
+                </div>
+                <span class="toggle-icon">▼</span>
             </div>
-        </article>
-
-        <article>
-            <h2>Beyond the Sun — Measuring Stars</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>Once the AU was known, astronomers could reach for the stars — literally!</p>
-            <img src="https://via.placeholder.com/600x300?text=Earth+Orbit+Parallax" alt="Earth’s orbit showing two viewing positions six months apart.">
-            
-            <h3>The Parallax Method</h3>
-            <p>If you close one eye, then the other, your thumb seems to move against the background. That’s parallax — and astronomers used Earth’s orbit as their “two eyes.” They measured a star’s position, waited six months, then measured again. The tiny shift showed the star’s distance.</p>
-            
-            <h3>The First Success</h3>
-            <p>In 1838, Friedrich Bessel measured the first stellar parallax. The nearest star, Proxima Centauri, shifts only 1.5 arc-seconds — like seeing a coin move 2.5 km away!</p>
-            
-            <div class="activity">
-                <h3>Activity: Thumb Trick</h3>
-                <ol>
-                    <li>Stretch your arm and raise your thumb.</li>
-                    <li>Look at it with one eye, then switch eyes.</li>
-                    <li>Notice how it “moves.”</li>
-                    <li>Bring your thumb closer — the shift gets bigger!</li>
-                </ol>
-                <p>That’s the same principle astronomers use to measure stars.</p>
+            <div class="post-content">
+                <p>The first day of teaching at Z. P. Primary School was an exciting one. I had planned to start with the CM1 module of the curriculum. Since attendance was low in the 7th class, I decided to introduce concepts gradually to avoid repeating lessons for absent students.</p>
+                <p>As I began the session with the question, "What is a computer?", I expected either silence or vague responses. However, one girl confidently answered, "A computer is an electronic device that takes input and gives output." Her precise definition surprised me and altered the direction of my lesson.</p>
             </div>
-        </article>
-
-        <article>
-            <h2>Locking the Scale — The Astronomical Unit</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>Kepler knew the shapes of the orbits but not their true sizes. Astronomers needed one real distance to scale the whole solar system — the distance from Earth to the Sun, called 1 Astronomical Unit (AU).</p>
-            <img src="https://via.placeholder.com/600x300?text=Transit+of+Venus" alt="Venus passing across the Sun as seen from two Earth positions.">
-            
-            <h3>The Transit of Venus</h3>
-            <p>When Venus passes between the Sun and Earth, it looks like a tiny black dot crossing the Sun’s face. In the 1700s, scientists across the world — even in India — timed how long it took Venus to cross. Because observers stood at different points on Earth, their timings differed slightly. Using geometry, they found the true Earth–Sun distance.</p>
-            
-            <h3>Measuring the Speed of Light</h3>
-            <p>Later, Ole Rømer used this new distance to measure how fast light travels. By timing Jupiter’s moon Io, he saw its eclipses arrived 20 minutes late when Earth was farthest away. That meant light took 20 minutes to cross twice the AU distance — the first measurement of light’s speed!</p>
-            
-            <div class="activity">
-                <h3>Activity: Torch and Coin Timing</h3>
-                <p>You’ll need:</p>
-                <ul>
-                    <li>A coin</li>
-                    <li>A torch</li>
-                    <li>A stopwatch</li>
-                </ul>
-                <p>Steps:</p>
-                <ol>
-                    <li>Place the torch facing a wall.</li>
-                    <li>Move the coin across the light beam at steady speed.</li>
-                    <li>Time how long it takes to cross.</li>
-                    <li>Move it closer or farther and repeat.</li>
-                </ol>
-                <p>Even tiny timing differences can tell big distances!</p>
-            </div>
-        </article>
-
-        <article>
-            <h2>Kepler’s Genius — Mapping the Solar System</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <img src="https://via.placeholder.com/600x300?text=Planetary+Orbits" alt="Planetary orbits showing Earth and Mars with elliptical paths.">
-            <p>More than 1,500 years later, a man named Johannes Kepler picked up where Copernicus left off. He wanted to know the exact shape of the planets’ paths around the Sun.</p>
-            
-            <h3>The Mars Trick</h3>
-            <p>Kepler used careful data collected by Tycho Brahe. He compared Mars’s position on nights 687 days apart — one full Mars year. That way, Mars was in the same place each time, but Earth had moved. Using geometry, he found Earth’s position on each of those nights and mapped its orbit.</p>
-            
-            <h3>The Big Discovery</h3>
-            <p>After ten years of painful math, Kepler found that planets don’t move in perfect circles — they move in ellipses (oval paths). The Sun sits at one focus of the ellipse. This discovery, known as Kepler’s First Law, was a giant leap. Now scientists could draw the shape of the solar system — though the scale (real size) was still unknown.</p>
-            
-            <div class="activity">
-                <h3>Activity: Draw Elliptical Orbits</h3>
-                <p>You’ll need:</p>
-                <ul>
-                    <li>Paper, pencil, string, and two pins</li>
-                </ul>
-                <p>Steps:</p>
-                <ol>
-                    <li>Push two pins close together — these are the “foci.”</li>
-                    <li>Tie the string into a loop and loop it around both pins.</li>
-                    <li>Pull the pencil tight and draw around — you’ll make an ellipse.</li>
-                    <li>Place the Sun at one focus and label planet orbits.</li>
-                </ol>
-                <img src="https://via.placeholder.com/600x300?text=Draw+Ellipse" alt="How to draw an ellipse using pins and string.">
-                <p>That’s how Kepler discovered the true dance of the planets!</p>
-            </div>
-        </article>
-
-        <article>
-            <h2>Earth, Moon, and the Sun’s Great Secret</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>Once Earth’s size was known, another Greek scientist, Aristarchus of Samos, looked up and asked, “If I know how big Earth is, can I find how far the Moon and Sun are?”</p>
-            <img src="https://via.placeholder.com/600x300?text=Lunar+Eclipse+Shadow" alt="Earth’s shadow falling on the Moon during a lunar eclipse.">
-            
-            <h3>Measuring the Moon’s Distance</h3>
-            <p>Aristarchus studied lunar eclipses — when Earth blocks sunlight and its round shadow falls on the Moon. He noticed that Earth’s shadow looked about 2.5 times wider than the Moon itself. He also timed how long the Moon took to pass through the shadow — about 3 hours. Since the Moon takes 27 days to complete one orbit, he used geometry and ratios to compare how far it moved during those 3 hours versus its whole orbit. Using the known size of Earth, he worked out that the Moon must be about 60 Earth radii away. Modern value: 60.3 Earth radii. Amazing accuracy without telescopes!</p>
-            <img src="https://via.placeholder.com/600x300?text=Eclipse+Geometry" alt="Geometry showing Earth, Moon, and shadow width during eclipse.">
-            
-            <h3>Finding the Sun’s Distance</h3>
-            <p>Next, Aristarchus turned to the half-moon phase. When the Moon looks exactly half lit, the Sun, Earth, and Moon make a right triangle. If he could measure the angle between the Sun and Moon, he could find how far away the Sun was.</p>
-            <img src="https://via.placeholder.com/600x300?text=Half-Moon+Triangle" alt="Right triangle formed by Earth, Moon, and Sun during half-moon phase.">
-            <p>The trouble was that the angle was very small — less than 1°. His eyes weren’t precise enough. He thought the Sun was 20 times farther than the Moon. In truth, it’s about 370 times! Still, Aristarchus made a bold leap: since the Sun was so large, it must be the center and Earth must move around it. That was the first heliocentric model — nearly 1,800 years before Copernicus!</p>
-            
-            <div class="activity">
-                <h3>Activity: Shadow and Coin Experiment</h3>
-                <p>You’ll need:</p>
-                <ul>
-                    <li>A coin</li>
-                    <li>A torch or candle</li>
-                    <li>A wall or screen</li>
-                    <li>A ruler</li>
-                </ul>
-                <p>Steps:</p>
-                <ol>
-                    <li>Place the torch on a table, pointing at the wall.</li>
-                    <li>Hold the coin in front of it to make a circular shadow.</li>
-                    <li>Move the coin closer or farther and note how the shadow changes size.</li>
-                    <li>Use a ruler to measure distances and shadow diameters.</li>
-                </ol>
-                <p>You’ve just learned how light and shadow reveal distance — the same idea Aristarchus used to measure the heavens!</p>
-            </div>
-        </article>
-
-        <article>
-            <h2>How Far Is Far? The Incredible Story of Measuring the Earth</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>Imagine standing outside on a sunny afternoon. You look at your shadow. Now imagine someone else, far away, doing the same thing — and their shadow is a little different! Would you believe that this tiny difference helped a man 2,000 years ago measure the entire size of the Earth?</p>
-            <p>Let’s travel back to ancient Egypt, around 250 BC. A wise man named Eratosthenes worked in the great library of Alexandria.</p>
-            <img src="https://via.placeholder.com/600x300?text=Eratosthenes+Experiment" alt="Eratosthenes experiment: Sunlight hitting Earth at Alexandria and Syene with shadows at different angles.">
-            
-            <h3>The Clue from a Deep Well</h3>
-            <p>Eratosthenes had heard that in Syene (now Aswan), on the day of the summer solstice, the Sun stood straight overhead. Sunlight fell straight into a deep well — no shadow at all! But in Alexandria, far to the north, a stick still made a small shadow at the same time. He thought, “If sunlight falls at different angles, the Earth must be curved!”</p>
-            
-            <h3>Measuring with Shadows</h3>
-            <p>At noon on the solstice, he placed a stick (a gnomon) upright in the ground and measured the shadow. The Sun’s rays were tilted by about 7.2°, which is 1/50th of a full circle (360°). The distance between Alexandria and Syene was about 800 km. So, if 7.2° equals 800 km, the whole circle (360°) must be: 360 × 800 ÷ 7.2 = 40,000 km. That’s almost the real circumference of Earth — measured 2,000 years ago with only a stick and sunlight!</p>
-            <img src="https://via.placeholder.com/600x300?text=Gnomon+Shadow" alt="Measuring the shadow angle with a stick (gnomon) and the Sun.">
-            
-            <h3>A Real Indian Example: Chennai and Jaipur</h3>
-            <p>Let’s try the same idea with two Indian cities! Chennai’s latitude ≈ 13° N, Jaipur’s latitude ≈ 27° N. Latitude difference = 14°. Distance between them ≈ 1,600 km (straight-line flight distance is about 1,607 km). If 14° = 1,600 km, then the full 360° = 360 × 1,600 ÷ 14 = 41,140 km. That’s very close to the real 40,075 km! Earth’s diameter = 41,140 ÷ π ≈ 13,090 km (Real = 12,742 km). Pretty good for simple math and sunlight! (Using the more precise 1,607 km distance: circumference ≈ 41,323 km, diameter ≈ 13,153 km — still impressively accurate!)</p>
-            <img src="https://via.placeholder.com/600x300?text=India+Map+Chennai+Jaipur" alt="Map of India highlighting Chennai and Jaipur for Earth measurement.">
-            
-            <div class="activity">
-                <h3>Activity: Measure Earth’s Diameter</h3>
-                <p>You’ll need:</p>
-                <ul>
-                    <li>A straight stick (1 m)</li>
-                    <li>A ruler and protractor</li>
-                    <li>A watch or phone clock</li>
-                    <li>A friend in another city</li>
-                    <li>Google Maps to measure distance</li>
-                </ul>
-                <p>Steps:</p>
-                <ol>
-                    <li>On the same date and time (solar noon), fix your stick upright on flat ground.</li>
-                    <li>Measure the length of its shadow.</li>
-                    <li>Calculate the Sun’s angle: angle = arctan(shadow ÷ stick height).</li>
-                    <li>Ask your friend to do the same.</li>
-                    <li>Find the difference in the Sun’s angle between both places.</li>
-                    <li>Use this formula: Earth’s circumference = 360 × distance ÷ angle difference.</li>
-                    <li>Divide by π to get diameter.</li>
-                </ol>
-                <img src="https://via.placeholder.com/600x300?text=Sunlight+Geometry" alt="Geometry of sunlight, stick, and shadow showing angle measurement.">
-            </div>
-        </article>
-
-        <article>
-            <h2>Plastic Mulch, a bad choice?</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>I was looking at old Google Earth images of my village and found one from 2018. The white areas in the fields are plastic mulch, which we farmers use to increase crop yields. But another picture shows our problem with getting rid of this plastic. The mulch is a 25-micron plastic film, and each acre needs 5-6 bundles, each weighing about 10 kg. If you search for my village, Rohokadi, and the surrounding area in the historical data, you’ll see the issue farmers might face soon. While plastic mulch has helped us grow better crops for the past 8-10 years, we are starting to notice some problems. Even though the mulch can be used for three crops in a row, most farmers only use it once and then throw it away. Over time, this plastic stops air from getting into the soil, which can harm the microbes that keep the soil healthy. This might make the soil less productive and lead to using more fertilizers.</p>
-            <p>Since mulch helps reduce water usage and weeds, it’s important for us to keep using it, especially in a developing country like ours. However, I’m concerned about the plastic waste it creates, so I’m looking for solutions. I’ve thought of a few ideas, and I’d love to collaborate if you have any thoughts on how they could be implemented:</p>
-            <ol>
-                <li><strong>Natural Foliage Mulch:</strong> Although using natural foliage as mulch is effective, collecting and spreading it can be difficult. I’m thinking about collecting this material and turning it into sheets that can be easily laid in the field.</li>
-                <li><strong>Biodegradable Paper Mulch:</strong> Another idea is to coat craft paper with vegetable oil and cure it to make it into a water-resistant, degradable polymer. This paper could then be used as mulch.</li>
-            </ol>
-        </article>
-
-        <article>
-            <h2>A Thought-Provoking Start: Exploring "What is a Computer?" with Young Minds</h2>
-            <div class="post-meta">Posted on October 25, 2025</div>
-            <p>The first day of teaching at Z. P. Primary School was an exciting one. I had planned to start with the CM1 module of the curriculum. Since attendance was low in the 7th class, I decided to introduce concepts gradually to avoid repeating lessons for absent students.</p>
-            <p>As I began the session with the question, "What is a computer?", I expected either silence or vague responses. However, one girl confidently answered, "A computer is an electronic device that takes input and gives output." Her precise definition surprised me and altered the direction of my lesson.</p>
         </article>
     </main>
 
     <footer>
         <p>&copy; 2025 NeIL's Blogs. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.post-header');
+            const contents = document.querySelectorAll('.post-content');
+            const icons = document.querySelectorAll('.toggle-icon');
+
+            headers.forEach((header, index) => {
+                header.addEventListener('click', function() {
+                    const targetContent = contents[index];
+                    const targetIcon = icons[index];
+
+                    // Close all contents
+                    contents.forEach(content => {
+                        if (content.classList.contains('open')) {
+                            content.classList.remove('open');
+                        }
+                    });
+                    icons.forEach(icon => {
+                        icon.textContent = '▼';
+                        icon.style.transform = 'rotate(0deg)';
+                    });
+
+                    // Toggle current
+                    if (targetContent.classList.contains('open')) {
+                        targetContent.classList.remove('open');
+                        targetIcon.textContent = '▼';
+                        targetIcon.style.transform = 'rotate(0deg)';
+                    } else {
+                        targetContent.classList.add('open');
+                        targetIcon.textContent = '▲';
+                        targetIcon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
