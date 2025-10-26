@@ -295,3 +295,66 @@ footer {
             border-left: 5px solid #3498db;
             margin-bottom: 20px;
         }
+
+
+/* Accordion Functionality - Append to end of styles.css */
+.blog-post {
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 15px 25px;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.post-header:hover {
+    background: #e9ecef;
+}
+
+.post-header h2 {
+    color: #007bff;
+    margin: 0;
+    flex-grow: 1;
+    border: none; /* Override if your original h2 has a border */
+    padding: 0;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.post-content {
+    padding: 0 25px 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.post-content.open {
+    max-height: 2000px; /* Increase if your longest post needs more space (e.g., 5000px) */
+    padding: 25px;
+}
+
+/* Responsive adjustments for accordion */
+@media (max-width: 600px) {
+    .post-header, .post-content.open {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .post-content.open {
+        padding-bottom: 15px;
+    }
+}
