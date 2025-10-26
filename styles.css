@@ -297,7 +297,7 @@ footer {
         }
 
 
-/* Accordion Functionality - Append to end of styles.css */
+/* Accordion Functionality - Updated for smooth expansion */
 .blog-post {
     overflow: hidden;
 }
@@ -321,7 +321,7 @@ footer {
     color: #007bff;
     margin: 0;
     flex-grow: 1;
-    border: none; /* Override if your original h2 has a border */
+    border: none;
     padding: 0;
 }
 
@@ -337,15 +337,15 @@ footer {
 }
 
 .post-content {
-    padding: 0 25px 25px;
+    padding: 0; /* Start with no padding when closed */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .post-content.open {
-    max-height: 2000px; /* Increase if your longest post needs more space (e.g., 5000px) */
-    padding: 25px;
+    padding: 25px; /* Apply padding only when open */
+    /* No fixed max-height here; JS will set dynamic height */
 }
 
 /* Responsive adjustments for accordion */
