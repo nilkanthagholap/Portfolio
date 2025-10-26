@@ -67,3 +67,39 @@ document.onkeydown = function (event) {
 // Disable right-click context menu
 document.addEventListener('contextmenu', event => event.preventDefault());
 
+
+
+
+// Accordion Functionality - Append to end of script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const headers = document.querySelectorAll('.post-header');
+    const contents = document.querySelectorAll('.post-content');
+    const icons = document.querySelectorAll('.toggle-icon');
+
+    headers.forEach((header, index) => {
+        header.addEventListener('click', function() {
+            const targetContent = contents[index];
+            const targetIcon = icons[index];
+
+            // Close all other contents
+            contents.forEach((content, i) => {
+                if (i !== index && content.classList.contains('open')) {
+                    content.classList.remove('open');
+                    icons[i].textContent = '▼';
+                    icons[i].style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current post
+            if (targetContent.classList.contains('open')) {
+                targetContent.classList.remove('open');
+                targetIcon.textContent = '▼';
+                targetIcon.style.transform = 'rotate(0deg)';
+            } else {
+                targetContent.classList.add('open');
+                targetIcon.textContent = '▲';
+                targetIcon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+});
