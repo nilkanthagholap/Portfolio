@@ -297,7 +297,7 @@ footer {
         }
 
 
-/* Accordion Functionality - Updated for smooth expansion */
+/* Accordion Functionality - Updated for smooth title-click expansion */
 .blog-post {
     overflow: hidden;
 }
@@ -311,6 +311,7 @@ footer {
     align-items: center;
     background: #f8f9fa;
     border-bottom: 1px solid #eee;
+    user-select: none; /* Prevents text selection from interfering with clicks */
 }
 
 .post-header:hover {
@@ -334,18 +335,18 @@ footer {
 .toggle-icon {
     font-size: 1.2em;
     transition: transform 0.3s ease;
+    user-select: none; /* Ensures icon doesn't interfere */
 }
 
 .post-content {
-    padding: 0; /* Start with no padding when closed */
+    padding: 0; /* No padding when closed */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .post-content.open {
-    padding: 25px; /* Apply padding only when open */
-    /* No fixed max-height here; JS will set dynamic height */
+    padding: 25px; /* Padding only when open */
 }
 
 /* Responsive adjustments for accordion */
