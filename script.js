@@ -70,7 +70,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 
 
-// Accordion Functionality - Append to end of script.js
+// Accordion Functionality - Updated with dynamic height
 document.addEventListener('DOMContentLoaded', function() {
     const headers = document.querySelectorAll('.post-header');
     const contents = document.querySelectorAll('.post-content');
@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     headers.forEach((header, index) => {
         header.addEventListener('click', function() {
+            console.log(`Clicked header ${index}`); // Debug: Check if click fires (remove after testing)
+
             const targetContent = contents[index];
             const targetIcon = icons[index];
 
@@ -85,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contents.forEach((content, i) => {
                 if (i !== index && content.classList.contains('open')) {
                     content.classList.remove('open');
+                    content.style.maxHeight = '0px'; // Explicit close
                     icons[i].textContent = '▼';
                     icons[i].style.transform = 'rotate(0deg)';
                 }
@@ -93,10 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle current post
             if (targetContent.classList.contains('open')) {
                 targetContent.classList.remove('open');
+                targetContent.style.maxHeight = '0px'; // Collapse
                 targetIcon.textContent = '▼';
                 targetIcon.style.transform = 'rotate(0deg)';
             } else {
                 targetContent.classList.add('open');
+                targetContent.style.maxHeight = targetContent.scrollHeight + 'px'; // Dynamic expand
                 targetIcon.textContent = '▲';
                 targetIcon.style.transform = 'rotate(180deg)';
             }
