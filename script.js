@@ -70,24 +70,27 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 
 
-// Accordion Functionality - Updated with dynamic height
+// Accordion Functionality - Updated for title/header click expansion
 document.addEventListener('DOMContentLoaded', function() {
     const headers = document.querySelectorAll('.post-header');
     const contents = document.querySelectorAll('.post-content');
     const icons = document.querySelectorAll('.toggle-icon');
 
     headers.forEach((header, index) => {
-        header.addEventListener('click', function() {
-            console.log(`Clicked header ${index}`); // Debug: Check if click fires (remove after testing)
+        header.addEventListener('click', function(e) {
+            // Prevent any bubbling if needed (unlikely, but safe)
+            e.stopPropagation();
+            
+            console.log(`Header ${index} clicked - expanding post`); // TEMP DEBUG: Remove after it works
 
             const targetContent = contents[index];
             const targetIcon = icons[index];
 
-            // Close all other contents
+            // Close all other posts
             contents.forEach((content, i) => {
                 if (i !== index && content.classList.contains('open')) {
                     content.classList.remove('open');
-                    content.style.maxHeight = '0px'; // Explicit close
+                    content.style.maxHeight = null; // Reset for smooth close
                     icons[i].textContent = '▼';
                     icons[i].style.transform = 'rotate(0deg)';
                 }
@@ -96,12 +99,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle current post
             if (targetContent.classList.contains('open')) {
                 targetContent.classList.remove('open');
-                targetContent.style.maxHeight = '0px'; // Collapse
+                targetContent.style.maxHeight = '0px';
                 targetIcon.textContent = '▼';
                 targetIcon.style.transform = 'rotate(0deg)';
             } else {
+                // Dynamic height: Calculate exact space needed
+                targetContent.style.maxHeight = targetContent.scrollHeight + 'px';
                 targetContent.classList.add('open');
-                targetContent.style.maxHeight = targetContent.scrollHeight + 'px'; // Dynamic expand
                 targetIcon.textContent = '▲';
                 targetIcon.style.transform = 'rotate(180deg)';
             }
